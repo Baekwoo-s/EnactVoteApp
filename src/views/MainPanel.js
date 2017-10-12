@@ -15,3 +15,9 @@ const MainPanel = kind({
 });
 
 export default MainPanel;
+
+// Header 따로 (Add)
+// VirtualList 따로
+// Add 따로
+// Delete Popup 따로
+// 수정 Popup 따로
