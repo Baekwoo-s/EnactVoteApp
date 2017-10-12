@@ -3,7 +3,6 @@ import React from 'react';
 
 import AddPopup from '../components/AddPopup';
 import CheckPopup from '../components/CheckPopup';
-import EditPopup from '../components/EditPopup';
 import PanelHeader from '../components/PanelHeader';
 import VoteList from '../components/VoteList';
 
@@ -21,7 +20,6 @@ class MainView extends React.Component {
 					type="compact" />
 				<AddPopup />
 				<CheckPopup />
-				<EditPopup />
 				<VoteList />
 			</Panel>
 		);

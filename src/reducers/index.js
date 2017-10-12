@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-import {ADD_ITEM, DELETE_ITEM, EDIT_ITEM, REFRESH_LIST} from '../actions';
+import {ADD_ITEM, DELETE_ITEM, REFRESH_LIST} from '../actions';
 
 const createRecords = (itemList) => {
 	const
@@ -74,21 +74,6 @@ const data = (state = initialState, action) => {
 			}
 			if (index) {
 				newData.splice(index, 1);
-			}
-
-			return Object.assign({}, state, {data: newData});
-		}
-		case EDIT_ITEM: {
-			const newData = Object.assign({}, state.data);
-			let index = null;
-			for (let i = 0; i < newData.length; i++) {
-				if(bigyoItem(newData[i], action.item)) {
-					index = i;
-					break;
-				}
-			}
-			if (index) {
-				newData[index] = action.item;
 			}
 
 			return Object.assign({}, state, {data: newData});

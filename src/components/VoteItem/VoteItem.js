@@ -21,10 +21,8 @@ const VoteItem = kind({
 			<Item {...rest}>
 				{data[index].name} -
 				{data[index].opinion} -
-				{data[index].selectItem.O + ' '} -
-				{data[index].selectItem.X + ' '}
-				<IconButton tooltipText="I go" onClick={null}>star</IconButton>
-				<IconButton tooltipText="I cant go" onClick={null}>hollowstar</IconButton>
+				<IconButton disabled={!data[index].selectItem.O} tooltipText="I go" onClick={null} selected={data[index].selectItem.O}>star</IconButton>
+				<IconButton disabled={!data[index].selectItem.X} tooltipText="I cant go" onClick={null} selected={data[index].selectItem.X}>hollowstar</IconButton>
 				<IconButton tooltipText="delete" onClick={null}>trash</IconButton>
 			</Item>
 		);
