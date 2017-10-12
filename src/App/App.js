@@ -3,7 +3,7 @@ import MoonstoneDecorator from '@enact/moonstone/MoonstoneDecorator';
 import Panels from '@enact/moonstone/Panels';
 import React from 'react';
 
-import MainPanel from '../views/MainPanel';
+import MainView from '../views/MainView';
 
 import css from './App.less';
 
@@ -18,7 +18,7 @@ const App = kind({
 	render: (props) => (
 		<div {...props}>
 			<Panels>
-				<MainPanel />
+				<MainView />
 			</Panels>
 		</div>
 	)
