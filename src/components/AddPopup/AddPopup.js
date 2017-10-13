@@ -29,10 +29,10 @@ class AddPopup extends React.Component {
 	}
 
 	render = () => {
+		const data = this.props;
+
 		return (
-			<Popup
-				// open
-			>
+			<Popup open={data.open}>
 				<center>
 					name: <Input onChange={this.onChangeName} value={this.state.name} />
 					, opinion: <Input onChange={this.onChangeOpinion} value={this.state.opinion} /><hr />

@@ -55,6 +55,7 @@ const testArray = [{
 const initialState = createRecords(testArray);
 
 const data = (state = initialState, action) => {
+	console.log(action.type);
 	switch (action.type) {
 		case ADD_ITEM: {
 			const
@@ -66,6 +67,8 @@ const data = (state = initialState, action) => {
 			return Object.assign({}, state, {data: newData});
 		}
 		case CHANGE_MENU_STATE: {
+			console.log("aaaaa  " + action.menuState);
+			console.dir(Object.assign({}, state, {menuState: action.menuState}));
 			return Object.assign({}, state, {menuState: action.menuState});
 		}
 		case DELETE_ITEM: {
