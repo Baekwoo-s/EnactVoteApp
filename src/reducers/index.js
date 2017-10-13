@@ -1,12 +1,15 @@
 import {combineReducers} from 'redux';
 
-import {ADD_ITEM, DELETE_ITEM, REFRESH_LIST} from '../actions';
+import {ADD_ITEM, CHANGE_MENU_STATE, DELETE_ITEM, REFRESH_LIST} from '../actions';
 
 const createRecords = (itemList) => {
 	const
 		records = {
 			data: {},
 			menuState: 0
+			// 0: popup disable
+			// 1: add popup
+			// 2: delete popup
 		};
 
 	for (let i = 0; i < itemList.length; ++i) {
@@ -58,10 +61,12 @@ const data = (state = initialState, action) => {
 				addedKey = Object.keys(state.data).length,
 				newData = Object.assign({}, state.data);
 
-			//FIXME: = action.item
-			newData[addedKey] = testArray[0];
+			newData[addedKey] = action.item;
 
 			return Object.assign({}, state, {data: newData});
+		}
+		case CHANGE_MENU_STATE: {
+			return Object.assign({}, state, {menuState: action.menuState});
 		}
 		case DELETE_ITEM: {
 			const newData = Object.assign({}, state.data);
